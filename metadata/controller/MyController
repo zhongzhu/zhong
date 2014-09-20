@@ -1,0 +1,97 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyController",
+        "requires": [
+            "Ext.MessageBox"
+        ]
+    },
+    "name": "MyController",
+    "designerId": "dc1b07fd-745c-4fb8-9d4b-f448d1ff0486",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "myAddTicketButton",
+                "selector": "mainview #addTicketButton"
+            },
+            "name": "myAddTicketButton",
+            "designerId": "f90e031d-e348-4299-9a6c-ab5e4f8df086"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "myAddTicketButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onAddTicketTap",
+                "implHandler": [
+                    "Ext.Msg.alert('Title', 'The quick brown fox jumped over the lazy dog.', Ext.emptyFn);"
+                ],
+                "name": "tap"
+            },
+            "name": "onAddTicketTap",
+            "designerId": "51cb2a0a-bca9-4c35-9f08-1bf12aa520f3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "mainview #ticketList",
+                "designer|targetType": "Ext.dataview.List",
+                "fn": "onTicketDisclose",
+                "implHandler": [
+                    "        var mainView = this.getMainView();",
+                    "        var myForm = mainView.push({",
+                    "            xtype: 'ticketview',",
+                    "            title: record.get('title'),",
+                    "            record: record",
+                    "        });",
+                    "",
+                    "        myForm.setRecord(record);",
+                    "        myForm.setValues({title:'haha'});",
+                    "        this.setValues({title:'ren'});",
+                    "        console.log(this);",
+                    "        console.log(mainView);",
+                    "        console.log(myForm);",
+                    "        console.log(record);"
+                ],
+                "name": "disclose"
+            },
+            "name": "onTicketDisclose",
+            "designerId": "23b0115c-7cf5-43f9-9087-4996f7bd415b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "mainview"
+            },
+            "name": "mainView",
+            "designerId": "9f390352-1dff-448c-8995-fd69260951d5"
+        }
+    ]
+}

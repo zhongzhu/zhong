@@ -1,0 +1,84 @@
+{
+    "type": "Ext.navigation.View",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "mainview",
+        "designer|userClassName": "MainView"
+    },
+    "name": "MyNavigationView",
+    "designerId": "e704fc81-d23f-4246-9464-ca53d0eb06c2",
+    "cn": [
+        {
+            "type": "Ext.navigation.Bar",
+            "reference": {
+                "name": "navigationBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top"
+            },
+            "name": "MyNavigationBar",
+            "designerId": "f38e1877-b381-4f31-8592-7ccf245c933e",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "iconAlign": null,
+                        "iconCls": "add",
+                        "id": "",
+                        "itemId": "addTicketButton",
+                        "text": null
+                    },
+                    "name": "MyButton",
+                    "designerId": "0b8b403c-e4c1-42f3-9df6-c2391fe560ef"
+                }
+            ]
+        },
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "ticketList",
+                "onItemDisclosure": true,
+                "store": "MyJsonStore",
+                "title": "Zhong"
+            },
+            "name": "MyList",
+            "designerId": "f6d33797-25fc-4918-bd51-447d0d9993b2",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div>{importance} {title} : {status}</div>"
+                        ]
+                    },
+                    "name": "itemTpl",
+                    "designerId": "ab1b1163-2886-4751-b406-a9b3a0d0127b"
+                }
+            ]
+        }
+    ]
+}

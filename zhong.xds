@@ -1,0 +1,56 @@
+{
+    "name": "zhong",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "5.0.2.250",
+            "frameworkVersion": "2.3.1.410"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "iPhone",
+                "builtIn": true,
+                "height": 480,
+                "width": 320
+            },
+            "viewportOrientation": "portrait"
+        },
+        "urlPrefix": "http://localhost:1841",
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "projectHasEnabledWebServer": true
+    },
+    "xdsVersion": "3.1.0",
+    "xdsBuild": 1851,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000007,
+    "framework": "touch23",
+    "viewOrderMap": {
+        "view": [
+            "e704fc81-d23f-4246-9464-ca53d0eb06c2",
+            "f0e532ea-5c85-43ed-a3b7-c4f045b34850"
+        ],
+        "store": [
+            "fc0aa2f2-df4b-4d76-a5e1-e05c68608546"
+        ],
+        "controller": [
+            "dc1b07fd-745c-4fb8-9d4b-f448d1ff0486"
+        ],
+        "model": [
+            "b4ab6a03-a770-430a-af9f-7bdedaf4d3f3"
+        ],
+        "resource": [
+            "096d2b41-f168-4cd4-ab38-d7b2df99f08a",
+            "aca35e24-9ae7-41d2-b19f-9c39aa01e23e"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

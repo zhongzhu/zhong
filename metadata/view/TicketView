@@ -1,0 +1,108 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "ticketview",
+        "designer|userClassName": "TicketView",
+        "itemId": "saveTicketButton"
+    },
+    "designerId": "f0e532ea-5c85-43ed-a3b7-c4f045b34850",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "MyFieldSet"
+            },
+            "name": "MyFieldSet",
+            "designerId": "395f636d-692c-438c-9b28-871cc149d961",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "titleField",
+                        "label": "Title"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "49b3e043-d21c-42da-8707-6ff6492a659c"
+                },
+                {
+                    "type": "Ext.field.Slider",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "importanceField",
+                        "label": "Importance",
+                        "maxValue": 5,
+                        "minValue": 1,
+                        "value": [
+                            3
+                        ]
+                    },
+                    "name": "MySliderField",
+                    "designerId": "580a5d00-980d-49ef-a990-902cdee8bb4c"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "statusField",
+                        "label": "Status",
+                        "options": [
+                            "[{text: 'Open', value: 'Open'},{text: 'In Progress',value: 'In Progress'},{text: 'Completed',value: 'Completed'}]"
+                        ]
+                    },
+                    "name": "MySelectField",
+                    "designerId": "ecc92c15-99f1-488e-9d0c-f10d64579813"
+                },
+                {
+                    "type": "Ext.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "descriptionField",
+                        "label": "Description"
+                    },
+                    "name": "MyTextArea",
+                    "designerId": "c932adc4-21d2-45d9-bd4c-c503bead184e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "Save"
+            },
+            "name": "MyButton1",
+            "designerId": "c14d9a69-0e61-4aff-b6f0-436f91be13af"
+        }
+    ]
+}
