@@ -40,7 +40,7 @@ Ext.define('Zhong.view.MainView', {
         items: [
             {
                 xtype: 'list',
-                title: 'Zhong',
+                title: 'My Ticket',
                 itemId: 'ticketList',
                 itemTpl: [
                     '<div>{importance} {title} : {status}</div>'

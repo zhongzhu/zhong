@@ -57,7 +57,7 @@
                 "itemId": "ticketList",
                 "onItemDisclosure": true,
                 "store": "MyJsonStore",
-                "title": "Zhong"
+                "title": "My Ticket"
             },
             "name": "MyList",
             "designerId": "f6d33797-25fc-4918-bd51-447d0d9993b2",

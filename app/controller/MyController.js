@@ -22,19 +22,19 @@ Ext.define('Zhong.controller.MyController', {
 
     config: {
         refs: {
-            myAddTicketButton: 'mainview #addTicketButton',
+            addTicketButton: 'mainview #addTicketButton',
             mainView: 'mainview',
             addTicketButton: 'mainview #addTicketButton'
         },
 
         control: {
-            "myAddTicketButton": {
+            "addTicketButton": {
                 tap: 'onAddTicketTap'
             },
             "mainview #ticketList": {
                 disclose: 'onTicketDisclose'
             },
-            "navigationview": {
+            "mainView": {
                 pop: 'onNavigationviewPop',
                 push: 'onNavigationviewPush'
             },
@@ -45,7 +45,13 @@ Ext.define('Zhong.controller.MyController', {
     },
 
     onAddTicketTap: function(button, e, eOpts) {
-        Ext.Msg.alert('Title', 'The quick brown fox jumped over the lazy dog.', Ext.emptyFn);
+        var mainView = this.getMainView(),
+        addTicketButton = this.getAddTicketButton();
+
+        mainView.push({
+            xtype: 'ticketview',
+            title: 'New ticket'
+        });
     },
 
     onTicketDisclose: function(list, record, target, index, e, eOpts) {

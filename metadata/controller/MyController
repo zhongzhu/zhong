@@ -22,10 +22,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "myAddTicketButton",
+                "ref": "addTicketButton",
                 "selector": "mainview #addTicketButton"
             },
-            "name": "myAddTicketButton",
+            "name": "addTicketButton",
             "designerId": "f90e031d-e348-4299-9a6c-ab5e4f8df086"
         },
         {
@@ -36,11 +36,17 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "myAddTicketButton",
+                "designer|controlQuery": "addTicketButton",
                 "designer|targetType": "Ext.Button",
                 "fn": "onAddTicketTap",
                 "implHandler": [
-                    "Ext.Msg.alert('Title', 'The quick brown fox jumped over the lazy dog.', Ext.emptyFn);"
+                    "var mainView = this.getMainView(),",
+                    "addTicketButton = this.getAddTicketButton();",
+                    "",
+                    "mainView.push({",
+                    "    xtype: 'ticketview',",
+                    "    title: 'New ticket'",
+                    "});"
                 ],
                 "name": "tap"
             },
@@ -93,7 +99,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "navigationview",
+                "designer|controlQuery": "mainView",
                 "designer|targetType": "MainView",
                 "fn": "onNavigationviewPop",
                 "implHandler": [
@@ -113,7 +119,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "navigationview",
+                "designer|controlQuery": "mainView",
                 "designer|targetType": "MainView",
                 "fn": "onNavigationviewPush",
                 "implHandler": [

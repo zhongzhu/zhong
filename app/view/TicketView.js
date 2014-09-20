@@ -30,7 +30,6 @@ Ext.define('Zhong.view.TicketView', {
         items: [
             {
                 xtype: 'fieldset',
-                title: 'MyFieldSet',
                 items: [
                     {
                         xtype: 'textfield',
