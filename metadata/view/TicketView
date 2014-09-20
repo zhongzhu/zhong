@@ -34,7 +34,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "titleField",
-                        "label": "Title"
+                        "label": "Title",
+                        "name": "title"
                     },
                     "name": "MyTextField",
                     "designerId": "49b3e043-d21c-42da-8707-6ff6492a659c"
@@ -51,6 +52,7 @@
                         "label": "Importance",
                         "maxValue": 5,
                         "minValue": 1,
+                        "name": "importance",
                         "value": [
                             3
                         ]
@@ -68,6 +70,7 @@
                     "userConfig": {
                         "itemId": "statusField",
                         "label": "Status",
+                        "name": "status",
                         "options": [
                             "[{text: 'Open', value: 'Open'},{text: 'In Progress',value: 'In Progress'},{text: 'Completed',value: 'Completed'}]"
                         ]
@@ -84,7 +87,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "descriptionField",
-                        "label": "Description"
+                        "label": "Description",
+                        "name": "description"
                     },
                     "name": "MyTextArea",
                     "designerId": "c932adc4-21d2-45d9-bd4c-c503bead184e"
@@ -99,7 +103,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "text": "Save"
+                "designer|uiInterfaceName": "action",
+                "iconCls": null,
+                "itemId": "saveTicketButton",
+                "text": "Save",
+                "ui": "action"
             },
             "name": "MyButton1",
             "designerId": "c14d9a69-0e61-4aff-b6f0-436f91be13af"

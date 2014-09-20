@@ -23,7 +23,8 @@ Ext.define('Zhong.controller.MyController', {
     config: {
         refs: {
             myAddTicketButton: 'mainview #addTicketButton',
-            mainView: 'mainview'
+            mainView: 'mainview',
+            addTicketButton: 'mainview #addTicketButton'
         },
 
         control: {
@@ -32,6 +33,13 @@ Ext.define('Zhong.controller.MyController', {
             },
             "mainview #ticketList": {
                 disclose: 'onTicketDisclose'
+            },
+            "navigationview": {
+                pop: 'onNavigationviewPop',
+                push: 'onNavigationviewPush'
+            },
+            "mainview #saveTicketButton": {
+                tap: 'onSaveTap'
             }
         }
     },
@@ -47,14 +55,24 @@ Ext.define('Zhong.controller.MyController', {
                     title: record.get('title'),
                     record: record
                 });
+    },
 
-                myForm.setRecord(record);
-                myForm.setValues({title:'haha'});
-                this.setValues({title:'ren'});
-                console.log(this);
-                console.log(mainView);
-                console.log(myForm);
-                console.log(record);
+    onNavigationviewPop: function(navigationview, view, eOpts) {
+        console.log('pop');
+        this.getAddTicketButton().show();
+    },
+
+    onNavigationviewPush: function(navigationview, view, eOpts) {
+        console.log('push');
+        this.getAddTicketButton().hide();
+    },
+
+    onSaveTap: function(button, e, eOpts) {
+        var mainView = this.getMainView();
+        var ticketView = button.up('ticketview');
+        var record = ticketView.getRecord();
+        console.log(record);
+        mainView.pop();
     }
 
 });

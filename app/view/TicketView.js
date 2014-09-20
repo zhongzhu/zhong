@@ -35,12 +35,14 @@ Ext.define('Zhong.view.TicketView', {
                     {
                         xtype: 'textfield',
                         itemId: 'titleField',
-                        label: 'Title'
+                        label: 'Title',
+                        name: 'title'
                     },
                     {
                         xtype: 'sliderfield',
                         itemId: 'importanceField',
                         label: 'Importance',
+                        name: 'importance',
                         value: [
                             3
                         ],
@@ -51,6 +53,7 @@ Ext.define('Zhong.view.TicketView', {
                         xtype: 'selectfield',
                         itemId: 'statusField',
                         label: 'Status',
+                        name: 'status',
                         options: [
                             {
                                 text: 'Open',
@@ -69,12 +72,15 @@ Ext.define('Zhong.view.TicketView', {
                     {
                         xtype: 'textareafield',
                         itemId: 'descriptionField',
-                        label: 'Description'
+                        label: 'Description',
+                        name: 'description'
                     }
                 ]
             },
             {
                 xtype: 'button',
+                itemId: 'saveTicketButton',
+                ui: 'action',
                 text: 'Save'
             }
         ]

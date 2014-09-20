@@ -64,15 +64,7 @@
                     "            xtype: 'ticketview',",
                     "            title: record.get('title'),",
                     "            record: record",
-                    "        });",
-                    "",
-                    "        myForm.setRecord(record);",
-                    "        myForm.setValues({title:'haha'});",
-                    "        this.setValues({title:'ren'});",
-                    "        console.log(this);",
-                    "        console.log(mainView);",
-                    "        console.log(myForm);",
-                    "        console.log(record);"
+                    "        });"
                 ],
                 "name": "disclose"
             },
@@ -92,6 +84,83 @@
             },
             "name": "mainView",
             "designerId": "9f390352-1dff-448c-8995-fd69260951d5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "navigationview",
+                "designer|targetType": "MainView",
+                "fn": "onNavigationviewPop",
+                "implHandler": [
+                    "console.log('pop');",
+                    "this.getAddTicketButton().show();"
+                ],
+                "name": "pop"
+            },
+            "name": "onNavigationviewPop",
+            "designerId": "c6c3b2af-cac5-49fc-8a57-84463ab1bcdf"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "navigationview",
+                "designer|targetType": "MainView",
+                "fn": "onNavigationviewPush",
+                "implHandler": [
+                    "console.log('push');",
+                    "this.getAddTicketButton().hide();"
+                ],
+                "name": "push"
+            },
+            "name": "onNavigationviewPush",
+            "designerId": "a0c40898-5a15-484c-b901-78366fe97117"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "addTicketButton",
+                "selector": "mainview #addTicketButton"
+            },
+            "name": "addTicketButton",
+            "designerId": "a550fb68-789c-461b-b0b8-e0c2a147534e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "mainview #saveTicketButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onSaveTap",
+                "implHandler": [
+                    "var mainView = this.getMainView(); ",
+                    "var ticketView = button.up('ticketview');",
+                    "var record = ticketView.getRecord();",
+                    "console.log(record);",
+                    "mainView.pop();"
+                ],
+                "name": "tap"
+            },
+            "name": "onSaveTap",
+            "designerId": "be8f1397-9364-4bed-9c6b-b939458f0a5f"
         }
     ]
 }
