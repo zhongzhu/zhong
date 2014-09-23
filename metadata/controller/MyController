@@ -65,12 +65,13 @@
                 "designer|targetType": "Ext.dataview.List",
                 "fn": "onTicketDisclose",
                 "implHandler": [
-                    "        var mainView = this.getMainView();",
-                    "        var myForm = mainView.push({",
-                    "            xtype: 'ticketview',",
-                    "            title: record.get('title'),",
-                    "            record: record",
-                    "        });"
+                    "var mainView = this.getMainView();",
+                    "this.getAddTicketButton().hide();",
+                    "mainView.push({",
+                    "    xtype: 'ticketview',",
+                    "    title: record.get('title'),",
+                    "    record: record",
+                    "});"
                 ],
                 "name": "disclose"
             },
@@ -104,7 +105,7 @@
                 "fn": "onNavigationviewPop",
                 "implHandler": [
                     "console.log('pop');",
-                    "this.getAddTicketButton().show();"
+                    "// this.getAddTicketButton().show();"
                 ],
                 "name": "pop"
             },
@@ -124,7 +125,7 @@
                 "fn": "onNavigationviewPush",
                 "implHandler": [
                     "console.log('push');",
-                    "this.getAddTicketButton().hide();"
+                    "// this.getAddTicketButton().hide();"
                 ],
                 "name": "push"
             },
@@ -182,6 +183,40 @@
             },
             "name": "onSaveTap",
             "designerId": "be8f1397-9364-4bed-9c6b-b939458f0a5f"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "ticketList",
+                "selector": "mainview #ticketList"
+            },
+            "name": "ticketList",
+            "designerId": "51aa6a74-6e0c-49e3-83f8-f63f650e9e37"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "ticketList",
+                "designer|targetType": "Ext.dataview.List",
+                "fn": "onListShow",
+                "implHandler": [
+                    "console.log(\"list show\");",
+                    "this.getAddTicketButton().show();"
+                ],
+                "name": "show"
+            },
+            "name": "onListShow",
+            "designerId": "c3e06d3f-7e01-4542-83fc-c9b5a524c038"
         }
     ]
 }

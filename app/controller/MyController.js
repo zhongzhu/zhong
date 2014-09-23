@@ -24,7 +24,8 @@ Ext.define('Zhong.controller.MyController', {
         refs: {
             addTicketButton: 'mainview #addTicketButton',
             mainView: 'mainview',
-            addTicketButton: 'mainview #addTicketButton'
+            addTicketButton: 'mainview #addTicketButton',
+            ticketList: 'mainview #ticketList'
         },
 
         control: {
@@ -40,6 +41,9 @@ Ext.define('Zhong.controller.MyController', {
             },
             "mainview #saveTicketButton": {
                 tap: 'onSaveTap'
+            },
+            "ticketList": {
+                show: 'onListShow'
             }
         }
     },
@@ -55,22 +59,23 @@ Ext.define('Zhong.controller.MyController', {
     },
 
     onTicketDisclose: function(list, record, target, index, e, eOpts) {
-                var mainView = this.getMainView();
-                var myForm = mainView.push({
-                    xtype: 'ticketview',
-                    title: record.get('title'),
-                    record: record
-                });
+        var mainView = this.getMainView();
+        this.getAddTicketButton().hide();
+        mainView.push({
+            xtype: 'ticketview',
+            title: record.get('title'),
+            record: record
+        });
     },
 
     onNavigationviewPop: function(navigationview, view, eOpts) {
         console.log('pop');
-        this.getAddTicketButton().show();
+        // this.getAddTicketButton().show();
     },
 
     onNavigationviewPush: function(navigationview, view, eOpts) {
         console.log('push');
-        this.getAddTicketButton().hide();
+        // this.getAddTicketButton().hide();
     },
 
     onSaveTap: function(button, e, eOpts) {
@@ -94,6 +99,11 @@ Ext.define('Zhong.controller.MyController', {
         console.log(store.sync());
 
         mainView.pop();
+    },
+
+    onListShow: function(component, eOpts) {
+        console.log("list show");
+        this.getAddTicketButton().show();
     }
 
 });

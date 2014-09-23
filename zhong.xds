@@ -16,7 +16,7 @@
             "viewportOrientation": "portrait"
         },
         "urlPrefix": "http://localhost:1841",
-        "exportPath": "",
+        "exportPath": "C:/xampp/htdocs/KKK",
         "spacesToIndent": 4,
         "sdkPath": "",
         "lineEnding": "CRLF",
