@@ -1,0 +1,174 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyController",
+        "requires": [
+            "Ext.MessageBox"
+        ]
+    },
+    "name": "MyController",
+    "designerId": "dc1b07fd-745c-4fb8-9d4b-f448d1ff0486",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "addTicketButton",
+                "selector": "mainview #addTicketButton"
+            },
+            "name": "addTicketButton",
+            "designerId": "f90e031d-e348-4299-9a6c-ab5e4f8df086"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "addTicketButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onAddTicketTap",
+                "implHandler": [
+                    "var mainView = this.getMainView(),",
+                    "addTicketButton = this.getAddTicketButton();",
+                    "",
+                    "mainView.push({",
+                    "    xtype: 'ticketview',",
+                    "    title: 'New ticket'",
+                    "});"
+                ],
+                "name": "tap"
+            },
+            "name": "onAddTicketTap",
+            "designerId": "51cb2a0a-bca9-4c35-9f08-1bf12aa520f3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "mainview #ticketList",
+                "designer|targetType": "Ext.dataview.List",
+                "fn": "onTicketDisclose",
+                "implHandler": [
+                    "        var mainView = this.getMainView();",
+                    "        var myForm = mainView.push({",
+                    "            xtype: 'ticketview',",
+                    "            title: record.get('title'),",
+                    "            record: record",
+                    "        });"
+                ],
+                "name": "disclose"
+            },
+            "name": "onTicketDisclose",
+            "designerId": "23b0115c-7cf5-43f9-9087-4996f7bd415b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "mainview"
+            },
+            "name": "mainView",
+            "designerId": "9f390352-1dff-448c-8995-fd69260951d5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "mainView",
+                "designer|targetType": "MainView",
+                "fn": "onNavigationviewPop",
+                "implHandler": [
+                    "this.getAddTicketButton().show();"
+                ],
+                "name": "pop"
+            },
+            "name": "onNavigationviewPop",
+            "designerId": "c6c3b2af-cac5-49fc-8a57-84463ab1bcdf"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "mainView",
+                "designer|targetType": "MainView",
+                "fn": "onNavigationviewPush",
+                "implHandler": [
+                    "this.getAddTicketButton().hide();"
+                ],
+                "name": "push"
+            },
+            "name": "onNavigationviewPush",
+            "designerId": "a0c40898-5a15-484c-b901-78366fe97117"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "addTicketButton",
+                "selector": "mainview #addTicketButton"
+            },
+            "name": "addTicketButton",
+            "designerId": "a550fb68-789c-461b-b0b8-e0c2a147534e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "mainview #saveTicketButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onSaveTap",
+                "implHandler": [
+                    "var mainView = this.getMainView(),",
+                    "    ticketView = button.up('ticketview'),",
+                    "    store = Ext.getStore('MyStore');",
+                    "var v = ticketView.getValues();",
+                    "console.log(v);",
+                    "store.add(v);",
+                    "store.sync();",
+                    "",
+                    "mainView.pop();"
+                ],
+                "name": "tap"
+            },
+            "name": "onSaveTap",
+            "designerId": "be8f1397-9364-4bed-9c6b-b939458f0a5f"
+        }
+    ]
+}

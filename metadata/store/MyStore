@@ -1,0 +1,32 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "MyStore",
+        "model": "Ticket",
+        "storeId": "MyStore"
+    },
+    "name": "MyStore",
+    "designerId": "eed7224e-eb6c-4ab9-91da-c8a875df5b2d",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Sql",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "database": "HelloWorld",
+                "table": "tickets"
+            },
+            "name": "MySqlProxy",
+            "designerId": "7bc52dbb-3bc8-4834-8f47-78ea46edcb25"
+        }
+    ]
+}

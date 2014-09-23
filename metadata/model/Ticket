@@ -6,7 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "Ticket"
+        "designer|userClassName": "Ticket",
+        "identifier": [
+            "{\"type\":\"uuid\"}"
+        ],
+        "requires": [
+            "Ext.data.identifier.Uuid"
+        ]
     },
     "name": "MyModel",
     "designerId": "b4ab6a03-a770-430a-af9f-7bdedaf4d3f3",
@@ -62,6 +68,19 @@
             },
             "name": "field3",
             "designerId": "23e60e5c-a6f0-429d-ae69-e67e1838e00e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "field4",
+            "designerId": "4584f078-f1f9-4f68-98b1-18b6f8f2e647"
         }
     ]
 }

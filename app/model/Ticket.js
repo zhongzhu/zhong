@@ -17,10 +17,14 @@ Ext.define('Zhong.model.Ticket', {
     extend: 'Ext.data.Model',
 
     requires: [
-        'Ext.data.Field'
+        'Ext.data.Field',
+        'Ext.data.identifier.Uuid'
     ],
 
     config: {
+        identifier: {
+            type: 'uuid'
+        },
         fields: [
             {
                 name: 'title'
@@ -33,6 +37,9 @@ Ext.define('Zhong.model.Ticket', {
             },
             {
                 name: 'importance'
+            },
+            {
+                name: 'id'
             }
         ]
     }

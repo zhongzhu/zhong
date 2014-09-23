@@ -22,6 +22,7 @@ Ext.define('Zhong.view.TicketView', {
         'Ext.field.Slider',
         'Ext.field.Select',
         'Ext.field.TextArea',
+        'Ext.field.Hidden',
         'Ext.Button'
     ],
 
@@ -73,6 +74,10 @@ Ext.define('Zhong.view.TicketView', {
                         itemId: 'descriptionField',
                         label: 'Description',
                         name: 'description'
+                    },
+                    {
+                        xtype: 'hiddenfield',
+                        name: 'id'
                     }
                 ]
             },

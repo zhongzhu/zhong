@@ -92,6 +92,19 @@
                     },
                     "name": "MyTextArea",
                     "designerId": "c932adc4-21d2-45d9-bd4c-c503bead184e"
+                },
+                {
+                    "type": "Ext.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "id"
+                    },
+                    "name": "MyHiddenField",
+                    "designerId": "6a27c8a3-b35f-4822-8ed2-1eb9968537c4"
                 }
             ]
         },

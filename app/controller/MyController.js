@@ -74,10 +74,25 @@ Ext.define('Zhong.controller.MyController', {
     },
 
     onSaveTap: function(button, e, eOpts) {
-        var mainView = this.getMainView();
-        var ticketView = button.up('ticketview');
-        var record = ticketView.getRecord();
-        console.log(record);
+        var mainView = this.getMainView(),
+            ticketView = button.up('ticketview'),
+            store = Ext.getStore('MyStore'),
+            values = ticketView.getValues(),
+            record = ticketView.getRecord();
+        console.log(values);
+        if (values.id === '') {
+            console.log('add a new record');
+            store.add(values);
+        } else {
+            console.log('update record');
+            console.log(record.data);
+
+            record.setData(values);
+            record.setDirty();
+        }
+
+        console.log(store.sync());
+
         mainView.pop();
     }
 

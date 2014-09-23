@@ -3,7 +3,7 @@
     "settings": {
         "cmd": {
             "license": "commercial",
-            "cmdVersion": "5.0.2.250",
+            "cmdVersion": "5.0.3.276",
             "frameworkVersion": "2.3.1.410"
         },
         "canvasControls": {
@@ -27,7 +27,7 @@
         "projectHasEnabledWebServer": true
     },
     "xdsVersion": "3.1.0",
-    "xdsBuild": 1851,
+    "xdsBuild": 1903,
     "schemaVersion": 1,
     "upgradeVersion": 300000000007,
     "framework": "touch23",
@@ -37,7 +37,8 @@
             "f0e532ea-5c85-43ed-a3b7-c4f045b34850"
         ],
         "store": [
-            "fc0aa2f2-df4b-4d76-a5e1-e05c68608546"
+            "fc0aa2f2-df4b-4d76-a5e1-e05c68608546",
+            "eed7224e-eb6c-4ab9-91da-c8a875df5b2d"
         ],
         "controller": [
             "dc1b07fd-745c-4fb8-9d4b-f448d1ff0486"
