@@ -40,9 +40,7 @@
                 "designer|targetType": "Ext.Button",
                 "fn": "onAddTicketTap",
                 "implHandler": [
-                    "var mainView = this.getMainView(),",
-                    "addTicketButton = this.getAddTicketButton();",
-                    "",
+                    "var mainView = this.getMainView();",
                     "mainView.push({",
                     "    xtype: 'ticketview',",
                     "    title: 'New ticket'",
@@ -66,7 +64,6 @@
                 "fn": "onTicketDisclose",
                 "implHandler": [
                     "var mainView = this.getMainView();",
-                    "this.getAddTicketButton().hide();",
                     "mainView.push({",
                     "    xtype: 'ticketview',",
                     "    title: record.get('title'),",
@@ -91,46 +88,6 @@
             },
             "name": "mainView",
             "designerId": "9f390352-1dff-448c-8995-fd69260951d5"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "mainView",
-                "designer|targetType": "MainView",
-                "fn": "onNavigationviewPop",
-                "implHandler": [
-                    "console.log('pop');",
-                    "// this.getAddTicketButton().show();"
-                ],
-                "name": "pop"
-            },
-            "name": "onNavigationviewPop",
-            "designerId": "c6c3b2af-cac5-49fc-8a57-84463ab1bcdf"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "mainView",
-                "designer|targetType": "MainView",
-                "fn": "onNavigationviewPush",
-                "implHandler": [
-                    "console.log('push');",
-                    "// this.getAddTicketButton().hide();"
-                ],
-                "name": "push"
-            },
-            "name": "onNavigationviewPush",
-            "designerId": "a0c40898-5a15-484c-b901-78366fe97117"
         },
         {
             "type": "controllerref",
@@ -217,6 +174,26 @@
             },
             "name": "onListShow",
             "designerId": "c3e06d3f-7e01-4542-83fc-c9b5a524c038"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "ticketList",
+                "designer|targetType": "Ext.dataview.List",
+                "fn": "onListHide",
+                "implHandler": [
+                    "console.log(\"list hide\");",
+                    "this.getAddTicketButton().hide();"
+                ],
+                "name": "hide"
+            },
+            "name": "onListHide",
+            "designerId": "121fc123-fec6-4a84-8906-4add2fbde345"
         }
     ]
 }

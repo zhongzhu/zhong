@@ -40,10 +40,10 @@ Ext.define('Zhong.view.MainView', {
         items: [
             {
                 xtype: 'list',
-                title: 'My Ticket',
+                title: 'My Plan',
                 itemId: 'ticketList',
                 itemTpl: [
-                    '<div>{importance} {title} : {status}</div>'
+                    '<div>{title} : {status}</div>'
                 ],
                 store: 'MyStore',
                 onItemDisclosure: true

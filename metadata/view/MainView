@@ -57,7 +57,7 @@
                 "itemId": "ticketList",
                 "onItemDisclosure": true,
                 "store": "MyStore",
-                "title": "My Ticket"
+                "title": "My Plan"
             },
             "name": "MyList",
             "designerId": "f6d33797-25fc-4918-bd51-447d0d9993b2",
@@ -72,7 +72,7 @@
                     "userConfig": {
                         "designer|displayName": "itemTpl",
                         "implHandler": [
-                            "<div>{importance} {title} : {status}</div>"
+                            "<div>{title} : {status}</div>"
                         ]
                     },
                     "name": "itemTpl",
