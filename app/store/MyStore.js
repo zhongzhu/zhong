@@ -17,18 +17,18 @@ Ext.define('MyPlan.store.MyStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'MyPlan.model.Ticket',
+        'MyPlan.model.Plan',
         'Ext.data.proxy.Sql'
     ],
 
     config: {
         autoLoad: true,
-        model: 'MyPlan.model.Ticket',
+        model: 'MyPlan.model.Plan',
         storeId: 'MyStore',
         proxy: {
             type: 'sql',
-            database: 'HelloWorld',
-            table: 'tickets'
+            database: 'myplan',
+            table: 'plan'
         }
     }
 });

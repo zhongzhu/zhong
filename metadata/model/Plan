@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "Ticket",
+        "designer|userClassName": "Plan",
         "identifier": [
             "{\"type\":\"uuid\"}"
         ],

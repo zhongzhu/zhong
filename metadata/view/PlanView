@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "ticketview",
-        "designer|userClassName": "TicketView",
-        "itemId": "saveTicketButton",
+        "designer|userAlias": "planview",
+        "designer|userClassName": "PlanView",
+        "itemId": null,
         "layout": "vbox"
     },
     "designerId": "f0e532ea-5c85-43ed-a3b7-c4f045b34850",
@@ -119,7 +119,8 @@
             "userConfig": {
                 "designer|uiInterfaceName": "action-round",
                 "iconCls": null,
-                "itemId": "saveTicketButton",
+                "itemId": "savePlanButton",
+                "margin": ".3em",
                 "text": "Save",
                 "ui": "action-round"
             },
@@ -135,7 +136,8 @@
             "codeClass": null,
             "userConfig": {
                 "designer|uiInterfaceName": "decline-round",
-                "itemId": "deleteTicketButton",
+                "itemId": "deletePlanButton",
+                "margin": ".3em",
                 "text": "Delete",
                 "ui": "decline-round"
             },

@@ -2,6 +2,6 @@
     "webBuild": {
         "environment": "production",
         "clean": "on",
-        "publishPath": "E:/repository/noplan/1"
+        "publishPath": "C:\\zhongzhu\\repository\\noplan\\1"
     }
 }

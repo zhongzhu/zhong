@@ -17,70 +17,71 @@ Ext.define('MyPlan.controller.MyController', {
     extend: 'Ext.app.Controller',
 
     requires: [
-        'Ext.MessageBox'
+        'Ext.MessageBox',
+        'Ext.ActionSheet'
     ],
 
     config: {
         refs: {
-            addTicketButton: 'mainview #addTicketButton',
+            addPlanButton: 'mainview #addPlanButton',
             mainView: 'mainview',
-            addTicketButton: 'mainview #addTicketButton',
-            ticketList: 'mainview #ticketList',
-            deleteTicketButton: 'mainview #deleteTicketButton'
+            addPlanButton: 'mainview #addPlanButton',
+            planList: 'mainview #planList',
+            deletePlanButton: 'planview #deletePlanButton'
         },
 
         control: {
-            "addTicketButton": {
-                tap: 'onAddTicketTap'
+            "addPlanButton": {
+                tap: 'onAddPlanTap'
             },
-            "mainview #ticketList": {
-                disclose: 'onTicketDisclose'
+            "mainview #planList": {
+                disclose: 'onPlanDisclose'
             },
-            "mainview #saveTicketButton": {
+            "mainview #savePlanButton": {
                 tap: 'onSaveTap'
             },
-            "ticketList": {
+            "planList": {
                 show: 'onListShow'
             },
-            "mainview #deleteTicketButton": {
+            "deletePlanButton": {
                 tap: 'onDeleteButtonTap'
             }
         }
     },
 
-    onAddTicketTap: function(button, e, eOpts) {
+    onAddPlanTap: function(button, e, eOpts) {
         var mainView = this.getMainView();
-        this.getAddTicketButton().hide();
+        this.getAddPlanButton().hide();
         mainView.push({
-            xtype: 'ticketview',
-            title: 'New ticket'
+            xtype: 'planview',
+            title: 'A New Plan'
         });
 
-        this.getDeleteTicketButton().hide();
+        this.getDeletePlanButton().hide();
     },
 
-    onTicketDisclose: function(list, record, target, index, e, eOpts) {
+    onPlanDisclose: function(list, record, target, index, e, eOpts) {
         var mainView = this.getMainView();
-        this.getAddTicketButton().hide();
+        this.getAddPlanButton().hide();
         mainView.push({
-            xtype: 'ticketview',
+            xtype: 'planview',
             title: record.get('title'),
             record: record
         });
-        this.getDeleteTicketButton().show();
+        this.getDeletePlanButton().show();
     },
 
     onSaveTap: function(button, e, eOpts) {
         var mainView = this.getMainView(),
-            ticketView = button.up('ticketview'),
+            planView = button.up('planview'),
             store = Ext.getStore('MyStore'),
-            values = ticketView.getValues(),
-            record = ticketView.getRecord();
+            values = planView.getValues(),
+            record = planView.getRecord();
         if (values.id === '') {
-            console.log('add a new record');
+            console.log('add a new plan');
             store.add(values);
         } else {
-            console.log('update record');
+            console.log('update a plan');
             record.setData(values);
             record.setDirty();
         }
@@ -91,17 +92,16 @@ Ext.define('MyPlan.controller.MyController', {
     },
 
     onListShow: function(component, eOpts) {
-        // console.log("list show");
-        this.getAddTicketButton().show();
+        this.getAddPlanButton().show();
     },
 
     onDeleteButtonTap: function(button, e, eOpts) {
+        console.log('delete a plan');
         var mainView = this.getMainView(),
-            ticketView = button.up('ticketview'),
+            planView = button.up('plantview'),
             store = Ext.getStore('MyStore'),
-            record = ticketView.getRecord();
+            record = planView.getRecord();
 
-        console.log('delete an existing record');
         store.remove(record);
         store.sync();
 

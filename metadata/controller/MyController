@@ -8,7 +8,8 @@
     "userConfig": {
         "designer|userClassName": "MyController",
         "requires": [
-            "Ext.MessageBox"
+            "Ext.MessageBox",
+            "Ext.ActionSheet"
         ]
     },
     "name": "MyController",
@@ -22,10 +23,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "addTicketButton",
-                "selector": "mainview #addTicketButton"
+                "ref": "addPlanButton",
+                "selector": "mainview #addPlanButton"
             },
-            "name": "addTicketButton",
+            "name": "addPlanButton",
             "designerId": "f90e031d-e348-4299-9a6c-ab5e4f8df086"
         },
         {
@@ -36,22 +37,22 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "addTicketButton",
+                "designer|controlQuery": "addPlanButton",
                 "designer|targetType": "Ext.Button",
-                "fn": "onAddTicketTap",
+                "fn": "onAddPlanTap",
                 "implHandler": [
                     "var mainView = this.getMainView();",
-                    "this.getAddTicketButton().hide();",
+                    "this.getAddPlanButton().hide();",
                     "mainView.push({",
-                    "    xtype: 'ticketview',",
-                    "    title: 'New ticket'",
+                    "    xtype: 'planview',",
+                    "    title: 'A New Plan'",
                     "});",
                     "",
-                    "this.getDeleteTicketButton().hide();"
+                    "this.getDeletePlanButton().hide();"
                 ],
                 "name": "tap"
             },
-            "name": "onAddTicketTap",
+            "name": "onAddPlanTap",
             "designerId": "51cb2a0a-bca9-4c35-9f08-1bf12aa520f3"
         },
         {
@@ -62,22 +63,22 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "mainview #ticketList",
+                "designer|controlQuery": "mainview #planList",
                 "designer|targetType": "Ext.dataview.List",
-                "fn": "onTicketDisclose",
+                "fn": "onPlanDisclose",
                 "implHandler": [
                     "var mainView = this.getMainView();",
-                    "this.getAddTicketButton().hide();",
+                    "this.getAddPlanButton().hide();",
                     "mainView.push({",
-                    "    xtype: 'ticketview',",
+                    "    xtype: 'planview',",
                     "    title: record.get('title'),",
                     "    record: record",
                     "});",
-                    "this.getDeleteTicketButton().show();"
+                    "this.getDeletePlanButton().show();"
                 ],
                 "name": "disclose"
             },
-            "name": "onTicketDisclose",
+            "name": "onPlanDisclose",
             "designerId": "23b0115c-7cf5-43f9-9087-4996f7bd415b"
         },
         {
@@ -102,10 +103,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "addTicketButton",
-                "selector": "mainview #addTicketButton"
+                "ref": "addPlanButton",
+                "selector": "mainview #addPlanButton"
             },
-            "name": "addTicketButton",
+            "name": "addPlanButton",
             "designerId": "a550fb68-789c-461b-b0b8-e0c2a147534e"
         },
         {
@@ -116,20 +117,20 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "mainview #saveTicketButton",
+                "designer|controlQuery": "mainview #savePlanButton",
                 "designer|targetType": "Ext.Button",
                 "fn": "onSaveTap",
                 "implHandler": [
                     "var mainView = this.getMainView(),",
-                    "    ticketView = button.up('ticketview'),",
+                    "    planView = button.up('planview'),",
                     "    store = Ext.getStore('MyStore'),",
-                    "    values = ticketView.getValues(),",
-                    "    record = ticketView.getRecord();",
+                    "    values = planView.getValues(),",
+                    "    record = planView.getRecord();",
                     "if (values.id === '') {",
-                    "    console.log('add a new record');",
+                    "    console.log('add a new plan');",
                     "    store.add(values);",
                     "} else {",
-                    "    console.log('update record');",
+                    "    console.log('update a plan');",
                     "    record.setData(values);",
                     "    record.setDirty();",
                     "}",
@@ -151,10 +152,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "ticketList",
-                "selector": "mainview #ticketList"
+                "ref": "planList",
+                "selector": "mainview #planList"
             },
-            "name": "ticketList",
+            "name": "planList",
             "designerId": "51aa6a74-6e0c-49e3-83f8-f63f650e9e37"
         },
         {
@@ -165,12 +166,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "ticketList",
+                "designer|controlQuery": "planList",
                 "designer|targetType": "Ext.dataview.List",
                 "fn": "onListShow",
                 "implHandler": [
-                    "// console.log(\"list show\");",
-                    "this.getAddTicketButton().show();"
+                    "this.getAddPlanButton().show();"
                 ],
                 "name": "show"
             },
@@ -185,16 +185,16 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "mainview #deleteTicketButton",
+                "designer|controlQuery": "deletePlanButton",
                 "designer|targetType": "Ext.Button",
                 "fn": "onDeleteButtonTap",
                 "implHandler": [
+                    "console.log('delete a plan');",
                     "var mainView = this.getMainView(),",
-                    "    ticketView = button.up('ticketview'),",
+                    "    planView = button.up('plantview'),",
                     "    store = Ext.getStore('MyStore'),",
-                    "    record = ticketView.getRecord();",
+                    "    record = planView.getRecord();",
                     "",
-                    "console.log('delete an existing record');",
                     "store.remove(record);",
                     "store.sync();",
                     "",
@@ -213,10 +213,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "deleteTicketButton",
-                "selector": "mainview #deleteTicketButton"
+                "ref": "deletePlanButton",
+                "selector": "planview #deletePlanButton"
             },
-            "name": "deleteTicketButton",
+            "name": "deletePlanButton",
             "designerId": "da987c74-f9b7-443e-b459-a157b6a0d5e8"
         }
     ]

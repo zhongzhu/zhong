@@ -32,7 +32,7 @@ Ext.define('MyPlan.view.MainView', {
                     xtype: 'button',
                     align: 'right',
                     id: '',
-                    itemId: 'addTicketButton',
+                    itemId: 'addPlanButton',
                     iconCls: 'add'
                 }
             ]
@@ -41,7 +41,7 @@ Ext.define('MyPlan.view.MainView', {
             {
                 xtype: 'list',
                 title: 'My Plan',
-                itemId: 'ticketList',
+                itemId: 'planList',
                 itemTpl: [
                     '<div>{title} : {status}</div>'
                 ],

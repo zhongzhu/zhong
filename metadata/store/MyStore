@@ -8,7 +8,7 @@
     "userConfig": {
         "autoLoad": true,
         "designer|userClassName": "MyStore",
-        "model": "Ticket",
+        "model": "Plan",
         "storeId": "MyStore"
     },
     "name": "MyStore",
@@ -22,8 +22,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "database": "HelloWorld",
-                "table": "tickets"
+                "database": "myplan",
+                "table": "plan"
             },
             "name": "MySqlProxy",
             "designerId": "7bc52dbb-3bc8-4834-8f47-78ea46edcb25"

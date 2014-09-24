@@ -38,7 +38,7 @@
                         "iconAlign": null,
                         "iconCls": "add",
                         "id": "",
-                        "itemId": "addTicketButton",
+                        "itemId": "addPlanButton",
                         "text": null
                     },
                     "name": "MyButton",
@@ -54,7 +54,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "itemId": "ticketList",
+                "itemId": "planList",
                 "onItemDisclosure": true,
                 "store": "MyStore",
                 "title": "My Plan"

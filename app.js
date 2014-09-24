@@ -21,15 +21,14 @@ Ext.Loader.setConfig({
 
 Ext.application({
     models: [
-        'Ticket'
+        'Plan'
     ],
     stores: [
-        'MyJsonStore',
         'MyStore'
     ],
     views: [
         'MainView',
-        'TicketView'
+        'PlanView'
     ],
     controllers: [
         'MyController'
