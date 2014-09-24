@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('Zhong.model.Ticket', {
+Ext.define('MyPlan.model.Ticket', {
     extend: 'Ext.data.Model',
 
     requires: [

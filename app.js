@@ -34,11 +34,11 @@ Ext.application({
     controllers: [
         'MyController'
     ],
-    name: 'Zhong',
+    name: 'MyPlan',
 
     launch: function() {
 
-        Ext.create('Zhong.view.MainView', {fullscreen: true});
+        Ext.create('MyPlan.view.MainView', {fullscreen: true});
     }
 
 });

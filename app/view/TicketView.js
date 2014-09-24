@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('Zhong.view.TicketView', {
+Ext.define('MyPlan.view.TicketView', {
     extend: 'Ext.form.Panel',
     alias: 'widget.ticketview',
 
@@ -28,6 +28,7 @@ Ext.define('Zhong.view.TicketView', {
 
     config: {
         itemId: 'saveTicketButton',
+        layout: 'vbox',
         items: [
             {
                 xtype: 'fieldset',
@@ -84,8 +85,14 @@ Ext.define('Zhong.view.TicketView', {
             {
                 xtype: 'button',
                 itemId: 'saveTicketButton',
-                ui: 'action',
+                ui: 'action-round',
                 text: 'Save'
+            },
+            {
+                xtype: 'button',
+                itemId: 'deleteTicketButton',
+                ui: 'decline-round',
+                text: 'Delete'
             }
         ]
     }

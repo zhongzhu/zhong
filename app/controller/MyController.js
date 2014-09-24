@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('Zhong.controller.MyController', {
+Ext.define('MyPlan.controller.MyController', {
     extend: 'Ext.app.Controller',
 
     requires: [
@@ -25,7 +25,8 @@ Ext.define('Zhong.controller.MyController', {
             addTicketButton: 'mainview #addTicketButton',
             mainView: 'mainview',
             addTicketButton: 'mainview #addTicketButton',
-            ticketList: 'mainview #ticketList'
+            ticketList: 'mainview #ticketList',
+            deleteTicketButton: 'mainview #deleteTicketButton'
         },
 
         control: {
@@ -39,27 +40,34 @@ Ext.define('Zhong.controller.MyController', {
                 tap: 'onSaveTap'
             },
             "ticketList": {
-                show: 'onListShow',
-                hide: 'onListHide'
+                show: 'onListShow'
+            },
+            "mainview #deleteTicketButton": {
+                tap: 'onDeleteButtonTap'
             }
         }
     },
 
     onAddTicketTap: function(button, e, eOpts) {
         var mainView = this.getMainView();
+        this.getAddTicketButton().hide();
         mainView.push({
             xtype: 'ticketview',
             title: 'New ticket'
         });
+
+        this.getDeleteTicketButton().hide();
     },
 
     onTicketDisclose: function(list, record, target, index, e, eOpts) {
         var mainView = this.getMainView();
+        this.getAddTicketButton().hide();
         mainView.push({
             xtype: 'ticketview',
             title: record.get('title'),
             record: record
         });
+        this.getDeleteTicketButton().show();
     },
 
     onSaveTap: function(button, e, eOpts) {
@@ -68,31 +76,36 @@ Ext.define('Zhong.controller.MyController', {
             store = Ext.getStore('MyStore'),
             values = ticketView.getValues(),
             record = ticketView.getRecord();
-        console.log(values);
         if (values.id === '') {
             console.log('add a new record');
             store.add(values);
         } else {
             console.log('update record');
-            console.log(record.data);
-
             record.setData(values);
             record.setDirty();
         }
 
-        console.log(store.sync());
+        store.sync();
 
         mainView.pop();
     },
 
     onListShow: function(component, eOpts) {
-        console.log("list show");
+        // console.log("list show");
         this.getAddTicketButton().show();
     },
 
-    onListHide: function(component, eOpts) {
-        console.log("list hide");
-        this.getAddTicketButton().hide();
+    onDeleteButtonTap: function(button, e, eOpts) {
+        var mainView = this.getMainView(),
+            ticketView = button.up('ticketview'),
+            store = Ext.getStore('MyStore'),
+            record = ticketView.getRecord();
+
+        console.log('delete an existing record');
+        store.remove(record);
+        store.sync();
+
+        mainView.pop();
     }
 
 });

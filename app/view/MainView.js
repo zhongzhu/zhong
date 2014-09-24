@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('Zhong.view.MainView', {
+Ext.define('MyPlan.view.MainView', {
     extend: 'Ext.navigation.View',
     alias: 'widget.mainview',
 

@@ -13,17 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('Zhong.store.MyStore', {
+Ext.define('MyPlan.store.MyStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'Zhong.model.Ticket',
+        'MyPlan.model.Ticket',
         'Ext.data.proxy.Sql'
     ],
 
     config: {
         autoLoad: true,
-        model: 'Zhong.model.Ticket',
+        model: 'MyPlan.model.Ticket',
         storeId: 'MyStore',
         proxy: {
             type: 'sql',

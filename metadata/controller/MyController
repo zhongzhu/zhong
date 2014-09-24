@@ -41,10 +41,13 @@
                 "fn": "onAddTicketTap",
                 "implHandler": [
                     "var mainView = this.getMainView();",
+                    "this.getAddTicketButton().hide();",
                     "mainView.push({",
                     "    xtype: 'ticketview',",
                     "    title: 'New ticket'",
-                    "});"
+                    "});",
+                    "",
+                    "this.getDeleteTicketButton().hide();"
                 ],
                 "name": "tap"
             },
@@ -64,11 +67,13 @@
                 "fn": "onTicketDisclose",
                 "implHandler": [
                     "var mainView = this.getMainView();",
+                    "this.getAddTicketButton().hide();",
                     "mainView.push({",
                     "    xtype: 'ticketview',",
                     "    title: record.get('title'),",
                     "    record: record",
-                    "});"
+                    "});",
+                    "this.getDeleteTicketButton().show();"
                 ],
                 "name": "disclose"
             },
@@ -120,19 +125,16 @@
                     "    store = Ext.getStore('MyStore'),",
                     "    values = ticketView.getValues(),",
                     "    record = ticketView.getRecord();",
-                    "console.log(values);",
                     "if (values.id === '') {",
                     "    console.log('add a new record');",
                     "    store.add(values);",
                     "} else {",
                     "    console.log('update record');",
-                    "    console.log(record.data);",
-                    "",
                     "    record.setData(values);",
                     "    record.setDirty();",
                     "}",
                     "",
-                    "console.log(store.sync());",
+                    "store.sync();",
                     "",
                     "mainView.pop();"
                 ],
@@ -167,7 +169,7 @@
                 "designer|targetType": "Ext.dataview.List",
                 "fn": "onListShow",
                 "implHandler": [
-                    "console.log(\"list show\");",
+                    "// console.log(\"list show\");",
                     "this.getAddTicketButton().show();"
                 ],
                 "name": "show"
@@ -183,17 +185,39 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "ticketList",
-                "designer|targetType": "Ext.dataview.List",
-                "fn": "onListHide",
+                "designer|controlQuery": "mainview #deleteTicketButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onDeleteButtonTap",
                 "implHandler": [
-                    "console.log(\"list hide\");",
-                    "this.getAddTicketButton().hide();"
+                    "var mainView = this.getMainView(),",
+                    "    ticketView = button.up('ticketview'),",
+                    "    store = Ext.getStore('MyStore'),",
+                    "    record = ticketView.getRecord();",
+                    "",
+                    "console.log('delete an existing record');",
+                    "store.remove(record);",
+                    "store.sync();",
+                    "",
+                    "mainView.pop();"
                 ],
-                "name": "hide"
+                "name": "tap"
             },
-            "name": "onListHide",
-            "designerId": "121fc123-fec6-4a84-8906-4add2fbde345"
+            "name": "onDeleteButtonTap",
+            "designerId": "73c9e108-416a-4cff-bf1a-df8239f4e2f2"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "deleteTicketButton",
+                "selector": "mainview #deleteTicketButton"
+            },
+            "name": "deleteTicketButton",
+            "designerId": "da987c74-f9b7-443e-b459-a157b6a0d5e8"
         }
     ]
 }

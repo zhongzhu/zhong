@@ -12,7 +12,7 @@
         "models": [
             "Ticket"
         ],
-        "name": "Zhong",
+        "name": "MyPlan",
         "stores": [
             "MyJsonStore",
             "MyStore"

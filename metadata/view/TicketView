@@ -8,7 +8,8 @@
     "userConfig": {
         "designer|userAlias": "ticketview",
         "designer|userClassName": "TicketView",
-        "itemId": "saveTicketButton"
+        "itemId": "saveTicketButton",
+        "layout": "vbox"
     },
     "designerId": "f0e532ea-5c85-43ed-a3b7-c4f045b34850",
     "cn": [
@@ -116,14 +117,30 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|uiInterfaceName": "action",
+                "designer|uiInterfaceName": "action-round",
                 "iconCls": null,
                 "itemId": "saveTicketButton",
                 "text": "Save",
-                "ui": "action"
+                "ui": "action-round"
             },
             "name": "MyButton1",
             "designerId": "c14d9a69-0e61-4aff-b6f0-436f91be13af"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|uiInterfaceName": "decline-round",
+                "itemId": "deleteTicketButton",
+                "text": "Delete",
+                "ui": "decline-round"
+            },
+            "name": "MyButton2",
+            "designerId": "b10cddc5-1218-4d41-8ea2-a7e821087842"
         }
     ]
 }

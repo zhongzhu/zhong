@@ -13,18 +13,18 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('Zhong.store.MyJsonStore', {
+Ext.define('MyPlan.store.MyJsonStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'Zhong.model.Ticket',
+        'MyPlan.model.Ticket',
         'Ext.data.proxy.Ajax',
         'Ext.data.reader.Json'
     ],
 
     config: {
         autoLoad: true,
-        model: 'Zhong.model.Ticket',
+        model: 'MyPlan.model.Ticket',
         storeId: 'MyJsonStore',
         proxy: {
             type: 'ajax',
