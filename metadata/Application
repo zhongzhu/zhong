@@ -10,7 +10,7 @@
             "MyController"
         ],
         "models": [
-            "Ticket"
+            "Plan"
         ],
         "name": "MyPlan",
         "stores": [

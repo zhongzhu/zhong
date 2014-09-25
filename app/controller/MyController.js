@@ -98,7 +98,7 @@ Ext.define('MyPlan.controller.MyController', {
     onDeleteButtonTap: function(button, e, eOpts) {
         console.log('delete a plan');
         var mainView = this.getMainView(),
-            planView = button.up('plantview'),
+            planView = button.up('planview'),
             store = Ext.getStore('MyStore'),
             record = planView.getRecord();
 

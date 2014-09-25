@@ -191,7 +191,7 @@
                 "implHandler": [
                     "console.log('delete a plan');",
                     "var mainView = this.getMainView(),",
-                    "    planView = button.up('plantview'),",
+                    "    planView = button.up('planview'),",
                     "    store = Ext.getStore('MyStore'),",
                     "    record = planView.getRecord();",
                     "",
